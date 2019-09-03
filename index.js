@@ -1,9 +1,27 @@
+function padNumber(number) {
+
+    if(!Number.isInteger(number)) {
+        console.debug(padNumber.name + " was called with something other than an integer as an argument???");
+        return;
+    }
+
+    // Easiest way I could find to do this.
+    // Also, the number is always converted to an integer.
+    if(number < 10) {
+        return "0" + number;
+    } else {
+        return "" + number;
+    }
+}
+
 function updateClock() {
     
     let date = new Date(Date.now());
     let clock = document.getElementById("clock");
 
-    clock.textContent = date.getHours() + ":" + date.getMinutes();
+    clock.textContent =
+    padNumber(date.getHours()) + ":" +
+    padNumber(date.getMinutes());
 
 }
 
