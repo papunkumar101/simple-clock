@@ -1,0 +1,30 @@
+body {
+    background: #5b4e7e;
+    font-family: sans-serif;
+}
+
+.centered {
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+.display {
+    display: block;
+    text-align: center;
+    color: black;
+    line-height: 1vw;
+}
+
+.display #clock {
+    font-weight: bold;
+    font-size: 10vw;
+    font-family: monospace;
+}
+
+.date {
+    font-size: 2vw;
+}
