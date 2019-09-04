@@ -62,10 +62,39 @@ function updateDate() {
 
 }
 
+// Maybe I'll add a button to choose either DDG or Google. Too lazy to do that now.
+function search(engineUrl, text) {
+
+    if(typeof(engineUrl) != typeof("") || typeof(text) != typeof("")) {
+        console.debug(search.name + " was called with something other than strings as arguments???");
+        return;
+    }
+
+    function prepareQuery(str) {
+        return "?q=" + str.replace(" ", "+");
+    }
+
+    return engineUrl + prepareQuery(text);
+
+}
+
 window.onload = function() {
+
+    let searchField = document.getElementById("search-field");
+    // I don't want to get intro trouble for anything, so:
+    // I (definitely) DO NOT own the site below.
+    let searchEngineUrl = "duckduckgo.com";
 
     updateClock();
     updateDate();
+
+    searchField.value = "";
+    searchField.focus();
+    searchField.addEventListener("keydown", function(e) {
+        if(e.keyCode == 13) {
+            window.open(search("https://" + searchEngineUrl, searchField.value), "_self");
+        }
+    });
 
     setInterval(updateClock, 1000);
     setInterval(updateDate, 1000 * 60);

@@ -19,6 +19,22 @@ body {
     line-height: 1vw;
 }
 
+.display #search-field {
+    color: #e8e6e3;
+    background: none;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 40vw;
+    height: 5vw;
+
+    padding: 2vw;
+    margin: none;
+    margin-top: 3vw;
+
+    border: none;
+    border-bottom: solid #e8e6e3 0.5vw;
+}
+
 .display #clock {
     font-weight: bold;
     font-size: 10vw;
